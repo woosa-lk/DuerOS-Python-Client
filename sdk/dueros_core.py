@@ -29,6 +29,7 @@ from sdk.interface.speaker import Speaker
 from sdk.interface.speech_recognizer import SpeechRecognizer
 from sdk.interface.speech_synthesizer import SpeechSynthesizer
 from sdk.interface.system import System
+from sdk.interface.led import Led
 import sdk.configurate
 
 logging.basicConfig(level=logging.INFO)
@@ -93,6 +94,7 @@ class DuerOS(object):
         self.speaker = Speaker(self)
         self.alerts = Alerts(self, player)
         self.system = System(self)
+        self.led = Led(self)
 
         self.state_listener = DuerOSStateListner()
 
@@ -558,6 +560,8 @@ class DuerOS(object):
             return 'speaker'
         elif namespace == 'ai.dueros.device_interface.system':
             return 'system'
+        elif namespace == 'ai.dueros.device_interface.thirdparty.speaker.led':
+            return 'led'
         else:
             return None
 
@@ -605,3 +609,8 @@ class DuerOS(object):
             return 'set_end_point'
         elif name == 'ThrowException':
             return 'throw_exception'
+        #LED
+        elif name == 'Open':
+            return 'led_open'
+        elif name == 'Close':
+            return 'led_close'
