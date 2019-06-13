@@ -182,7 +182,7 @@ def main():
     dueros.set_directive_listener(directive_listener)
 
     # [小度小度] SnowBoy唤醒引擎
-    model = 'app/snowboy/xiaoduxiaodu_all_10022017.umdl'
+    model = 'app/snowboy/xiaobai.pmdl'
     # SnowBoy唤醒引擎实体
     snowboy = SnowBoy(model)
 
@@ -197,7 +197,7 @@ def main():
         唤醒回调
         :return:
         '''
-        print '[小度]已唤醒,我能为你做些什么..........'
+        print '[小白]已唤醒,我能为你做些什么..........'
         # 唤醒态提示音
         prompt_tone_player.play()
         dueros.listen()
@@ -209,7 +209,7 @@ def main():
     snowboy.start()
     audio.start()
 
-    print '请说[小度小度]来唤醒我.......'
+    print '请说[小白]来唤醒我.......'
 
     while True:
         try:
