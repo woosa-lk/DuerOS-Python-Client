@@ -101,7 +101,7 @@ class HotwordDetector(object):
         #        "(%d) does not match" % (self.num_hotwords, len(sensitivity))
         sensitivity_str = ",".join([str(t) for t in sensitivity])
         if len(sensitivity) != 0:
-            self.detector.SetSensitivity('0.55')
+            self.detector.SetSensitivity('0.46')
 
         self.ring_buffer = RingBuffer(
             self.detector.NumChannels() * self.detector.SampleRate() * 5)
